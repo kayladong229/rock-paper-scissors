@@ -17,8 +17,8 @@ function playRound(playerSelection, computerSelection) {
     playerSelection.charAt(0).toUpperCase() +
     playerSelection.substr(1).toLowerCase();
 
-  console.log(userChoice);
-  console.log(computerSelection);
+  console.log("Player chose: " + userChoice);
+  console.log("Computer chose: " + computerSelection);
 
   if (userChoice === "Rock" && computerSelection === "Scissors") {
     console.log("You win! Rock beats scissors.");
