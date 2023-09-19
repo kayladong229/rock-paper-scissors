@@ -1,0 +1,71 @@
+function getComputerChoice() {
+  let num = Math.floor(Math.random() * 3) + 1;
+  // console.log(num);
+
+  if (num <= 1) {
+    return "Rock";
+  } else if (num > 1 && num <= 2) {
+    return "Paper";
+  } else {
+    return "Scissors";
+  }
+}
+
+function playRound(playerSelection, computerSelection) {
+  // Format player choice to start with uppercase letter
+  let selection =
+    playerSelection.charAt(0).toUpperCase() + playerSelection.substr(1);
+  console.log(selection);
+  console.log(computerSelection);
+
+  if (selection === "Rock" && computerSelection === "Scissors") {
+    console.log("You win! Rock beats scissors.");
+    return 1;
+  } else if (selection === "Rock" && computerSelection === "Paper") {
+    console.log("You lose! Paper beats rock.");
+    return -1;
+  } else if (selection === "Paper" && computerSelection === "Rock") {
+    console.log("You win! Paper beats rock.");
+    return 1;
+  } else if (selection === "Paper" && computerSelection === "Scissors") {
+    console.log("You lose! Scissors beats paper.");
+    return -1;
+  } else if (selection === "Scissors" && computerSelection === "Paper") {
+    console.log("You win! Scissors beats paper.");
+    return 1;
+  } else if (selection === "Scissors" && computerSelection === "Rock") {
+    console.log("You lose! Rock beats scissors.");
+    return -1;
+  } else {
+    console.log("It's a tie.");
+    return 0;
+  }
+}
+
+function game(num) {
+  let playerScore = 0;
+  let compScore = 0;
+
+  for (let i = 1; i <= num; i++) {
+    const playerSelection = prompt(
+      "Type in one of the following options: rock, paper, scissors."
+    );
+    const computerSelection = getComputerChoice();
+
+    const result = playRound(playerSelection, computerSelection);
+    if (result === 1) {
+      playerScore++;
+    } else if (result === -1) {
+      compScore++;
+    }
+  }
+
+  console.log("Final player score: " + playerScore);
+  console.log("Final computer score: " + compScore);
+
+  playerScore > compScore
+    ? console.log("Player wins!")
+    : console.log("Computer wins!");
+}
+
+game(5);
