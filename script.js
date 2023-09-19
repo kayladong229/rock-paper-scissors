@@ -17,7 +17,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection.charAt(0).toUpperCase() +
     playerSelection.substr(1).toLowerCase();
 
-  console.log("Player chose: " + userChoice);
+  console.log("You chose: " + userChoice);
   console.log("Computer chose: " + computerSelection);
 
   if (userChoice === "Rock" && computerSelection === "Scissors") {
@@ -66,8 +66,8 @@ function game() {
   console.log("Final computer score: " + compScore);
 
   playerScore > compScore
-    ? console.log("Player wins!")
-    : console.log("Computer wins!");
+    ? console.log("You win! Congratulations!")
+    : console.log("Computer wins! Better luck next time.");
 }
 
 game();
