@@ -13,27 +13,29 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   // Format player choice to start with uppercase letter
-  let selection =
-    playerSelection.charAt(0).toUpperCase() + playerSelection.substr(1);
-  console.log(selection);
+  let userChoice =
+    playerSelection.charAt(0).toUpperCase() +
+    playerSelection.substr(1).toLowerCase();
+
+  console.log(userChoice);
   console.log(computerSelection);
 
-  if (selection === "Rock" && computerSelection === "Scissors") {
+  if (userChoice === "Rock" && computerSelection === "Scissors") {
     console.log("You win! Rock beats scissors.");
     return 1;
-  } else if (selection === "Rock" && computerSelection === "Paper") {
+  } else if (userChoice === "Rock" && computerSelection === "Paper") {
     console.log("You lose! Paper beats rock.");
     return -1;
-  } else if (selection === "Paper" && computerSelection === "Rock") {
+  } else if (userChoice === "Paper" && computerSelection === "Rock") {
     console.log("You win! Paper beats rock.");
     return 1;
-  } else if (selection === "Paper" && computerSelection === "Scissors") {
+  } else if (userChoice === "Paper" && computerSelection === "Scissors") {
     console.log("You lose! Scissors beats paper.");
     return -1;
-  } else if (selection === "Scissors" && computerSelection === "Paper") {
+  } else if (userChoice === "Scissors" && computerSelection === "Paper") {
     console.log("You win! Scissors beats paper.");
     return 1;
-  } else if (selection === "Scissors" && computerSelection === "Rock") {
+  } else if (userChoice === "Scissors" && computerSelection === "Rock") {
     console.log("You lose! Rock beats scissors.");
     return -1;
   } else {
@@ -42,11 +44,11 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game(num) {
+function game() {
   let playerScore = 0;
   let compScore = 0;
 
-  for (let i = 1; i <= num; i++) {
+  for (let i = 1; i <= 5; i++) {
     const playerSelection = prompt(
       "Type in one of the following options: rock, paper, scissors."
     );
@@ -68,4 +70,4 @@ function game(num) {
     : console.log("Computer wins!");
 }
 
-game(5);
+game();
