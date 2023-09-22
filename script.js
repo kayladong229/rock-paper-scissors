@@ -98,7 +98,7 @@ buttons.forEach((button) => {
   });
 });
 
-// previous game function
+// **previous game function**
 // function game() {
 //   let playerScore = 0;
 //   let computerScore = 0;
